@@ -44,23 +44,23 @@ public class ShiroHelloworld {
 			token.setRememberMe(true);
 			try {
 				//执行登陆。
-				currentUser.login(token);
+					currentUser.login(token);
 				log.info("====================================>登陆成功！");
-			} catch (UnknownAccountException uae) {
-				//如果没有指定用户，shiro将会抛出UnknownAccountException
-				log.info("====================================>未知用户名： " + token.getPrincipal());
-				return;
-			} catch (IncorrectCredentialsException ice) {
-				//若果账户存在，密码不匹配则抛出IncorrectCredentialsException异常
-				log.info("====================================>密码不正确！");
-				return;
-			} catch (LockedAccountException lae) {
-				//用户被锁定异常
-				log.info("The account for username " + token.getPrincipal() + " is locked.  "
-						+ "Please contact your administrator to unlock it.");
-			}catch (AuthenticationException ae) {
-				//AuthenticationException 所有认证异常的父类
-			}
+				} catch (UnknownAccountException uae) {
+					//如果没有指定用户，shiro将会抛出UnknownAccountException
+					log.info("====================================>未知用户名： " + token.getPrincipal());
+					return;
+				} catch (IncorrectCredentialsException ice) {
+					//若果账户存在，密码不匹配则抛出IncorrectCredentialsException异常
+					log.info("====================================>密码不正确！");
+					return;
+				} catch (LockedAccountException lae) {
+					//用户被锁定异常
+					log.info("The account for username " + token.getPrincipal() + " is locked.  "
+							+ "Please contact your administrator to unlock it.");
+				}catch (AuthenticationException ae) {
+					//AuthenticationException 所有认证异常的父类
+				}
 		}
 		log.info("+++++++++++++++++++++++++++++++++++User [" + currentUser.getPrincipal() + "] logged in successfully.");
 

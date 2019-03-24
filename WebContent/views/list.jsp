@@ -9,7 +9,7 @@
 <body>
 	<h4>LIST PAGE!!</h4>
 	
-	
+	<a href="../shiro/logout">注销</a>
 	
 	
 </body>

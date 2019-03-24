@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h4>USER PAGE!!</h4>
-	
+	<a href="../shiro/logout">注销</a>
 	
 	
 	
