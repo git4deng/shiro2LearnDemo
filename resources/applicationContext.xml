@@ -33,7 +33,9 @@
     </bean>
     
      <!--6.配置shiroFilter -->
-     <!--6.1 id必须和web.xml配置的 <filter-name>shiroFilter</filter-name> 一致-->
+     <!--6.1 id必须和web.xml配置的 <filter-name>shiroFilter</filter-name> 一致
+     		若不一致, 则会抛出: NoSuchBeanDefinitionException. 因为 Shiro 会来 IOC 容器中查找和 <filter-name> 名字对应的 filter bean.
+     -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         
         <property name="securityManager" ref="securityManager"/>
