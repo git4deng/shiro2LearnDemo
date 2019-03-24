@@ -9,7 +9,7 @@
    <!--1.配置securityManager-->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="cacheManager" ref="cacheManager"/>
-        <property name="realm" ref="shiroRealm"/>
+        <property name="realm" ref="shiroRealmEncryptedPassword"/>
     </bean>
 
    <!--2.配置cacheManager，缓存管理器
@@ -20,7 +20,20 @@
     </bean>
 	<!--3.配置realm-->
 	<!--3.1 直接配置实现了Realm接口的bean-->
+	<!--密码是明文的验证方式-->
 	<bean id="shiroRealm" class="com.david.shiro.realms.ShiroRealm"></bean>
+	<!--使用加密算法的方式验证密码-->
+	<bean id="shiroRealmEncryptedPassword" class="com.david.shiro.realms.ShiroRealmEncryptedPassword">
+		
+		<!--该属性配置加密算法-->
+		<property name="credentialsMatcher">
+			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+				<property name="hashAlgorithmName" value="MD5"></property>
+				<!--加密的次数-->
+				<property name="hashIterations" value="1024"></property>
+			</bean>
+		</property>
+	</bean>
 	
     <!--4.配置LifecycleBeanPostProcessor ，可以自动的来调用配置在spring IOC容器种shirobean的生命周期方法-->
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
