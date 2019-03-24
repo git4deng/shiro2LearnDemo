@@ -14,6 +14,7 @@ SimpleAuthenticationInfo(principal, credentials, credentialsSalt, realmName) ¹¹Ô
 2. Ìæ»»µ±Ç° Realm µÄ credentialsMatcher ÊôĞÔ. Ö±½ÓÊ¹ÓÃ HashedCredentialsMatcher ¶ÔÏó, ²¢ÉèÖÃ¼ÓÃÜËã·¨¼´¿É. 
 
 ÃÜÂëµÄ±È¶Ô:
+ÑéÖ¤²½Öè£¬ÕÒµ½UsernamePasswordTokenÀàÖĞµÄgetPassword·½·¨£¬´ò¶Ïµã£¬È»ºóÏòÇ°ÕÒ¾ÍÄÜÕÒµ½±È¶ÔÃÜÂëµÄµØ·½
 Í¨¹ı AuthenticatingRealm µÄ credentialsMatcher ÊôĞÔÀ´½øĞĞµÄÃÜÂëµÄ±È¶Ô!
 
 1. »ñÈ¡µ±Ç°µÄ Subject. µ÷ÓÃ SecurityUtils.getSubject();
